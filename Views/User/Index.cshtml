@@ -1,0 +1,80 @@
+﻿@model IEnumerable<MVCFlowerApp.Models.tbl_users>
+
+@{
+    ViewBag.Title = "Spencer Flower Shop : Users";
+}
+<div style="background-color:#BDB0AD;border-radius:25px;padding:20px;margin:30px;font-family:inherit">
+    <center><h2>"Spencer Flower Shop : Users"</h2></center>
+</div>
+<hr size="10" width="90%" color="red">
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a class="btn btn-primary" href="~/User/Create">Create a New User</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telephone)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telephone)
+            </td>
+            <td>
+                <a class="btn btn-default" href="~/User/Edit/@item.ID_user">Edit</a>
+                <a class="btn btn-danger" href="~/User/Delete/@item.ID_user">Delete</a>
+                <a class="btn btn-success" href="~/User/Details/@item.ID_user">Details</a>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.ID_user }, new { @class = "red" })*@
+                @*@Html.ActionLink("Details", "Details", new { id = item.ID_user })*@
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.ID_user })*@
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    <a href="~/" style="font-size:medium;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Back to main menu</a> <br />
+</div>
+

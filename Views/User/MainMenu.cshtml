@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<div style="background-color:#BDB0AD;border-radius:25px;padding:20px;margin:30px;font-family:inherit">
+    <center><h2>"Welcome Back to Spencer Flower Shop"</h2></center>
+</div>
+<hr size="10" width="90%" color="red">
+
+@{       if (!string.IsNullOrEmpty(ViewBag.Message))
+            {
+                <div class="alert alert-warning">@ViewBag.Message</div>
+            }
+}
+
+    <div class="form-horizontal">
+        <center>
+            <hr />
+            <form action="/User/Login" method="post">
+                <div class="form-group">
+                    <label>Enter your username</label>
+                    <input type="text" name="username" ,value="" />
+
+                </div>
+                <div class="form-group">
+                    <label>Enter your password</label>
+                    <input type="password" name="password" ,value="" />
+
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Login" class="btn btn-primary btn-lg btn-block" />
+                    </div>
+                </div>
+            </form>
+        </center>
+    </div>
+
+}
+
+<div>
+    <a href="~/" style="font-size:medium;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif">Back to main menu</a> <br />
+</div>
